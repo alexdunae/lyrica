@@ -38,7 +38,7 @@ class Lyrica
 
 private
   def connect
-    @db = Sequel.sqlite("#{@db_dir}/lyrica.sqlite")
+    @db = Sequel.sqlite # ("#{@db_dir}/lyrica.sqlite") try in-memory for heroku
     @db.create_table? :charts do
       primary_key :id
       String      :artist,     :index => true
