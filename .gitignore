@@ -1,6 +1,7 @@
 *.sqlite
 *.sqlite3
 .DS_Store
+*.tmproj
 ehthumbs.db
 Icon?
 Thumbs.db
