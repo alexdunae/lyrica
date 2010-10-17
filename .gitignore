@@ -1,0 +1,6 @@
+*.sqlite
+*.sqlite3
+.DS_Store?
+ehthumbs.db
+Icon?
+Thumbs.db

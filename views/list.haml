@@ -1,0 +1,5 @@
+%ul{:data => {:role => 'listview', :filter => 'true'}}
+  - songs.each do |song|
+    %li{:data => {:role => 'option'}}
+      %a{:data => {:icon => 'arrow-r', 'iconpos' => 'right'}, :href => "/view/#{song[:filename]}"}= song[:title]
+    

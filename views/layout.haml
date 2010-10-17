@@ -1,0 +1,14 @@
+!!!
+%html
+  %head
+    %meta{:charset => 'utf-8'}
+    %title 'Lyrica'
+    %link{:rel => 'stylesheet', :href => 'http://code.jquery.com/mobile/1.0a1/jquery.mobile-1.0a1.min.css'} 
+    %script{:src => 'http://code.jquery.com/jquery-1.4.3.min.js'}
+    %script{:src => 'http://code.jquery.com/mobile/1.0a1/jquery.mobile-1.0a1.min.js'}
+  %body
+    %div{:data => {:role => 'page'}}
+      %div{:data => {:role => 'header', :position => 'fullscreen'}}
+        %h1= title
+      %div{:data => {:role => 'content'}}
+        = yield
