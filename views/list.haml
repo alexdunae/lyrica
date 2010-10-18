@@ -1,5 +1,8 @@
-%ul{:data => {:role => 'listview', :filter => 'true'}}
-  - songs.each do |song|
-    %li{:data => {:role => 'option'}}
-      %a{:data => {:icon => 'arrow-r', 'iconpos' => 'right'}, :href => "/view/#{song[:filename]}"}= song[:title]
+%div{:data => {:role => 'header', :position => 'fullscreen'}}
+  %h1= title + ' songs'
+%div{:data => {:role => 'content'}}
+  %ul{:data => {:role => 'listview', :filter => 'true'}}
+    - songs.each do |song|
+      %li{:data => {:role => 'option'}}
+        %a{:data => {:icon => 'arrow-r', 'iconpos' => 'right'}, :href => "/view/#{song[:filename]}"}= song[:title]
     

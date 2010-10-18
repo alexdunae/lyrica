@@ -1,8 +1,11 @@
-%ul{:data => {:role => 'listview'}}
-  %li{:data => {:role => 'option'}}
-    %a{:data => {:icon => 'arrow-r', 'iconpos' => 'right'}, :href => "/all"} all songs
-
-  - charts.each do |c|
+%div{:data => {:role => 'header', :position => 'fullscreen'}}
+  %h1= title
+%div{:data => {:role => 'content'}}
+  %ul{:data => {:role => 'listview'}}
     %li{:data => {:role => 'option'}}
-      %a{:data => {:icon => 'arrow-r', 'iconpos' => 'right'}, :href => "/#{c[:artist]}"}= c[:artist] + " <span class='ui-li-count'>#{c[:count]}</span>"
+      %a{:data => {:icon => 'arrow-r', 'iconpos' => 'right'}, :href => "/all"} all songs
+
+    - charts.each do |c|
+      %li{:data => {:role => 'option'}}
+        %a{:data => {:icon => 'arrow-r', 'iconpos' => 'right'}, :href => "/#{c[:artist]}"}= c[:artist] + " <span class='ui-li-count'>#{c[:count]}</span>"
     

@@ -1,1 +1,7 @@
-%pre= chart[:content]
+%div{:data => {:role => 'header', :position => 'fullscreen'}}
+  %h1= title
+%div{:data => {:role => 'content'}}
+  %pre= chart[:content]
+%div{:data => {:role => 'footer'}, :class => 'ui-bar'}
+  %div{:data => {:role => 'controlgroup', :type => 'horizontal'}}
+    %a{:data => {:role => 'button', :icon => 'delete'}, :href => '#'} Remove
