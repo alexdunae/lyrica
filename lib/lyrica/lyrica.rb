@@ -49,13 +49,20 @@ private
     @db
   end
 
+  # Extract title, artist and content from a chord file.
+  #
+  # Expects the file to be named <tt>title - artist.crd</tt> or just <tt>title.crd</tt>.
+  #
+  # Returns as Hash <tt>{filename, title, artist, content}</tt>
   def load_file(fn)
-    parts = File.basename(fn, '.*').split(/[\s]+\-[\s]+/, 2)
+    # break the filename into one or two chunks, using reverse because rsplit isn't
+    # available in Ruby 1.8
+    parts = File.basename(fn, '.*').downcase.reverse.split(/[\s]+\-[\s]+/, 2)
     
     if parts.length == 2
-      out = {:artist => parts[0], :title => parts[1]}
+      out = {:artist => parts[0].reverse, :title => parts[1].reverse}
     else
-      out = {:artist => 'unknown', :title => parts[0]}
+      out = {:artist => 'unknown', :title => parts[0].reverse}
     end
 
     out[:filename] = File.basename(fn)
