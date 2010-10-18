@@ -2,10 +2,8 @@ require 'sequel'
 
 class Lyrica
   attr_accessor :db
-  @db_dir = ''
 
-  def initialize(db_dir = nil)
-    @db_dir = db_dir || Dir.pwd
+  def initialize
     connect
   end
 
