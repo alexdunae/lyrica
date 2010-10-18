@@ -4,6 +4,8 @@ require "sinatra/reloader" if development?
 require 'haml'
 require 'lyrica/lyrica'
 
+set :root, File.dirname(__FILE__)
+
 configure do
   set :haml, :format => :html5
   DATA_DIR = File.expand_path(File.join(File.dirname(__FILE__), 'data'))
