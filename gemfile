@@ -1,0 +1,6 @@
+source :gemcutter
+gem 'sinatra', '>= 1.0'
+gem 'sinatra-reloader'
+gem 'sqlite3-ruby'
+gem 'sequel'
+gem 'haml'
